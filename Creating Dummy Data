@@ -1,23 +1,98 @@
 import numpy as np
 
-# Create a 1-dimensional array of 10 random integers between 0 and 100
-dummy_data = np.random.randint(low=0, high=100, size=10)
-print(dummy_data)
+# Define the mean and covariance matrix of the distribution
+mean = [0, 0]
+cov = [[1, 0.5], [0.5, 1]]
 
-# Create a 2-dimensional array of 3 rows and 4 columns of random floats between 0 and 1
-dummy_data = np.random.rand(3, 4)
-print(dummy_data)
-# Create an array of zeros with shape (5, 5)
-zeros = np.zeros((5, 5))
+# Generate 500 random numbers with the given mean and covariance
+data = np.random.multivariate_normal(mean, cov, 500)
 
-# Create an array of ones with shape (2, 2)
-ones = np.ones((2, 2))
+# Print the first 5 rows of the data
+print(data[:5])
 
-# Create an array with values from 0 to 9
-range_array = np.arange(10)
+import numpy as np
+import matplotlib.pyplot as plt
 
-# Print the arrays
-print(zeros)
-print(ones)
-print(range_array)
+# Define the mean and covariance matrix of the distribution
+mean = [0, 0]
+cov = [[1, 0.5], [0.5, 1]]
 
+# Generate 500 random numbers with the given mean and covariance
+data = np.random.multivariate_normal(mean, cov, 500)
+
+# Visualize the data with a scatter plot
+plt.scatter(data[:, 0], data[:, 1], marker='.')
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter plot of 500 data points')
+plt.show()
+
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the mean and covariance matrix of the distribution
+mean = [0, 0]
+cov = [[1, 0.5], [0.5, 1]]
+
+# Generate 500 random numbers with the given mean and covariance
+data = np.random.multivariate_normal(mean, cov, 500)
+
+# Visualize the data with a histogram
+plt.hist2d(data[:, 0], data[:, 1], bins=20, cmap=plt.cm.Blues)
+plt.colorbar()
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Histogram of 500 data points')
+plt.show()
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the mean and covariance matrix of the distribution
+mean = [0, 0]
+cov = [[1, 0.5], [0.5, 1]]
+
+# Generate 500 random numbers with the given mean and covariance
+data = np.random.multivariate_normal(mean, cov, 500)
+
+# Create a histogram of the X values
+plt.hist(data[:, 0], bins=20)
+plt.xlabel('X')
+plt.ylabel('Count')
+plt.title('Histogram of X values')
+plt.xlim(-4, 4)  # Set the range of the horizontal axis
+plt.show()
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Define the mean and covariance matrix of the distribution for Problem 1
+mean1 = [0, 0]
+cov1 = [[1, 0.5], [0.5, 1]]
+
+# Define the mean and covariance matrix of the distribution for Problem 4
+mean2 = [2, 2]
+cov2 = [[1, 0], [0, 1]]
+
+# Generate 500 random numbers with the given mean and covariance for Problem 1
+data1 = np.random.multivariate_normal(mean1, cov1, 500)
+
+# Generate 500 random numbers with the given mean and covariance for Problem 4
+data2 = np.random.multivariate_normal(mean2, cov2, 500)
+
+# Visualize the data for Problem 1 with a scatter plot
+plt.scatter(data1[:, 0], data1[:, 1])
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter plot of Problem 1 data')
+plt.show()
+
+# Visualize the data for Problem 4 with a scatter plot
+plt.scatter(data2[:, 0], data2[:, 1])
+plt.xlabel('X')
+plt.ylabel('Y')
+plt.title('Scatter plot of Problem 4 data')
+plt.show()

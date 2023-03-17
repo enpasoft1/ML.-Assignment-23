@@ -96,3 +96,21 @@ plt.xlabel('X')
 plt.ylabel('Y')
 plt.title('Scatter plot of Problem 4 data')
 plt.show()
+
+
+import numpy as np
+
+# Define the mean and covariance matrices for the two distributions
+mean1 = [0, 0]
+cov1 = [[1, 0.5], [0.5, 1]]
+mean2 = [2, 2]
+cov2 = [[1, 0], [0, 1]]
+
+# Generate 500 random numbers with each distribution
+data1 = np.random.multivariate_normal(mean1, cov1, 500)
+data2 = np.random.multivariate_normal(mean2, cov2, 500)
+
+# Concatenate the two arrays into a single (1000, 2) array
+data = np.concatenate((data1, data2), axis=0)
+
+print(data.shape)  # Prints (1000, 2)
